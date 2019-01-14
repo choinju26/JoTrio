@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:JOINJU"
+             x:Class="JOINJU.MainPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="150"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Button Text="점수판" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="100" BackgroundColor="Aqua" 
+                Command="{Binding NavigateCommand}"
+                CommandParameter="{x:Type local:ScoreBoard}"/>
+        <Button Text="기록" Grid.Row="1" Grid.Column="0"  FontSize="100" BackgroundColor="Aqua" 
+                Command="{Binding NavigateCommand}"
+                CommandParameter="{x:Type local:MatchRecordList}"/>
+        <Button Text="설정" Grid.Row="1" Grid.Column="1"  FontSize="100" BackgroundColor="Aqua" 
+                Command="{Binding NavigateCommand}"
+                CommandParameter="{x:Type local:Setting}"/>
+    </Grid>
+
+</ContentPage>
