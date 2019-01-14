@@ -15,6 +15,7 @@ namespace JOINJU
 		public Setting ()
 		{
 			InitializeComponent ();
+            BindingContext = new MatchlistPicker();
 		}
 	}
 }

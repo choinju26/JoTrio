@@ -4,7 +4,14 @@
              x:Class="JOINJU.Setting">
     <ContentPage.Content>
         <StackLayout>
-            <Picker Title="네?"  />
+            <Label Text="Plese select your city" FontSize="Micro"/>
+            <Picker Title="--Select--"
+                    ItemsSource="{Binding CitiesList}"
+                    ItemDisplayBinding="{Binding Value}"
+                    SelectedItem="{Binding SelectedCity}"/>
+
+            <Label Text="{Binding MyCity}"  TextColor="Teal"/>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
