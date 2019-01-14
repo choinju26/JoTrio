@@ -24,5 +24,10 @@ namespace JOINJU
         }
 
         public ICommand NavigateCommand { private set; get; }
+
+        private void RowDefinition_SizeChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
