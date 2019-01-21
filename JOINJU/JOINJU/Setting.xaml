@@ -4,9 +4,9 @@
              x:Class="JOINJU.Setting">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Plese select your city" FontSize="Micro"/>
+            <Label Text="Plese select your city" />
             <Picker Title="--Select--"
-                    ItemsSource="{Binding CitiesList}"
+                    ItemsSource="{Binding SportsList}"
                     ItemDisplayBinding="{Binding Value}"
                     SelectedItem="{Binding SelectedCity}"/>
 
