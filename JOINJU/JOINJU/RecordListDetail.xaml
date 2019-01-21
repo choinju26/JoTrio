@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+     x:Class="JOINJU.RecordListDetail">
+    <StackLayout VerticalOptions="Center" 
+        HorizontalOptions="FillAndExpand" 
+        Padding="20, 10, 20, 20" 
+        Opacity="0.9">
+        <Frame BackgroundColor="White">
+            <StackLayout >
+                <StackLayout Orientation="Horizontal"   >
+                    <Entry FontSize="30" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" TextColor="Blue"  Text="A팀"  />
+                    <Entry FontSize="30" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"  Text="B팀" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal"  HorizontalOptions="FillAndExpand" >
+                    <Label  Text="25" />
+                    <Label  Text="19-01-17-18:00" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"/>
+                    <Label Text="21" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" >
+                    <Button Text="UPDATE" HorizontalOptions="FillAndExpand"/>
+                    <Button Text="DELETE" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</pages:PopupPage>

@@ -2,14 +2,39 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JOINJU.MatchRecordList">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <ListView x:Name="MyListView"
+            ItemsSource="{Binding Items}"
+            ItemTapped="Handle_ItemTapped"
+            CachingStrategy="RecycleElement"
+            SeparatorVisibility="Default">
+
+
+        <!--Built in Cells-->
+        <ListView.Header>
+            <StackLayout Orientation="Horizontal" HeightRequest="100" HorizontalOptions="Center">
+                <Label Text="HISTORY" FontSize="50" TextColor="Black"/>
+            </StackLayout>
+        </ListView.Header>
+
+        <ListView.ItemTemplate>
+
+            <DataTemplate>
+
+                <ViewCell >
+                    <StackLayout Orientation="Horizontal"  HorizontalOptions="FillAndExpand" Spacing="50" >
+                        <Label FontSize="30" Text="5"/>
+                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                            <Label Text="19-01-17-18:00"  HorizontalTextAlignment="Center"/>
+                            <Label Text="A : B" HorizontalTextAlignment="Center"/>
+                        </StackLayout>
+                        <Label FontSize="30" Text="2" />
+                    </StackLayout>
+
+                </ViewCell>
+
+            </DataTemplate>
+        </ListView.ItemTemplate>
+
+
+    </ListView>
 </ContentPage>
