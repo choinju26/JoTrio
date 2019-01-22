@@ -2,8 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JOINJU.MatchRecordList">
-    <ListView x:Name="MyListView"
-            ItemsSource="{Binding Items}"
+    <ListView 
+            ItemsSource="{Binding ScoreList}"
             ItemTapped="Handle_ItemTapped"
             CachingStrategy="RecycleElement"
             SeparatorVisibility="Default">
@@ -22,12 +22,12 @@
 
                 <ViewCell >
                     <StackLayout Orientation="Horizontal"  HorizontalOptions="FillAndExpand" Spacing="50" >
-                        <Label FontSize="30" Text="5"/>
+                        <Label Text ="{Binding ScoreA}" FontSize="30"/>
                         <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-                            <Label Text="19-01-17-18:00"  HorizontalTextAlignment="Center"/>
-                            <Label Text="A : B" HorizontalTextAlignment="Center"/>
+                            <Label Text="{Binding Date}"  HorizontalTextAlignment="Center"/>
+                            <Label Text="{Binding Team}" HorizontalTextAlignment="Center"/>
                         </StackLayout>
-                        <Label FontSize="30" Text="2" />
+                        <Label FontSize="30" Text="{Binding ScoreB}" />
                     </StackLayout>
 
                 </ViewCell>

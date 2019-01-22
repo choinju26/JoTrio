@@ -20,16 +20,11 @@ namespace JOINJU
         {
             InitializeComponent();
 
-            Items = new ObservableCollection<string>
-            {
-                "Item 1",
-                "Item 2",
-                "Item 3",
-                "Item 4",
-                "Item 5"
-            };
+            BindingContext = new ListViewModel();
 
-            MyListView.ItemsSource = Items;
+          
+
+          //  MyListView.ItemsSource = Items;
         }
 
         private RecordListDetail popup;
