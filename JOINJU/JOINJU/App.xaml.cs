@@ -11,7 +11,17 @@ namespace JOINJU
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            var tappedPage = new TabbedPage();
+            tappedPage.Children.Add(new MainPage());
+            tappedPage.Children.Add(new MatchRecordList());
+            tappedPage.Children.Add(new Setting());
+
+            MainPage = new TabbedPage();
+            MainPage = tappedPage;
+
+            //MainPage = new NavigationPage(new MainPage());
+
+
         }
 
         protected override void OnStart()

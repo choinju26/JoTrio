@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:JOINJU"
-             x:Class="JOINJU.MainPage">
+             x:Class="JOINJU.MainPage" Title="점수판">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -14,15 +14,46 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Button Text="점수판" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="100" BackgroundColor="Aqua" Clicked="ScoreBoard_Click"/>
-        <!--Command="{Binding NavigateCommand}"
-                CommandParameter="{x:Type local:ScoreBoard}"-->
-        <Button Text="기록" Grid.Row="1" Grid.Column="0"  FontSize="100" BackgroundColor="Aqua" 
+        <Button Text="축구" ContentLayout="Top, 10" Grid.Row="0" Grid.Column="0" FontSize="50" BackgroundColor="Aqua" 
                 Command="{Binding NavigateCommand}"
-                CommandParameter="{x:Type local:MatchRecordList}"/>
-        <Button Text="설정" Grid.Row="1" Grid.Column="1"  FontSize="100" BackgroundColor="Aqua" 
+                CommandParameter="{x:Type local:ScoreBoard}">
+            <Button.Image>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS, Android" Value="soccer.png" />
+                    <On Platform="UWP" Value="Assets/MonkeyFace.png" />
+                </OnPlatform>
+            </Button.Image>
+        </Button>
+        <Button Text="탁구" ContentLayout="Top, 10" Grid.Row="0" Grid.Column="1" FontSize="50" BackgroundColor="Aqua" 
                 Command="{Binding NavigateCommand}"
-                CommandParameter="{x:Type local:Setting}"/>
+                CommandParameter="{x:Type local:ScoreBoard}">
+            <Button.Image>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS, Android" Value="MonkeyFace.png" />
+                    <On Platform="UWP" Value="Assets/MonkeyFace.png" />
+                </OnPlatform>
+            </Button.Image>
+        </Button>
+        <Button Text="배드민턴" ContentLayout="Top, 10"  Grid.Row="1" Grid.Column="0"  FontSize="50" BackgroundColor="Aqua" 
+                Command="{Binding NavigateCommand}"
+                CommandParameter="{x:Type local:ScoreBoard}">
+            <Button.Image>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS, Android" Value="MonkeyFace.png" />
+                    <On Platform="UWP" Value="Assets/MonkeyFace.png" />
+                </OnPlatform>
+            </Button.Image>
+        </Button>
+        <Button Text="테니스" ContentLayout="Top, 10"  Grid.Row="1" Grid.Column="1"  FontSize="50" BackgroundColor="Aqua" 
+                Command="{Binding NavigateCommand}"
+                CommandParameter="{x:Type local:ScoreBoard}">
+            <Button.Image>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS, Android" Value="MonkeyFace.png" />
+                    <On Platform="UWP" Value="Assets/MonkeyFace.png" />
+                </OnPlatform>
+            </Button.Image>
+        </Button>
     </Grid>
 
 </ContentPage>
