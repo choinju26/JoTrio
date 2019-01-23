@@ -29,5 +29,9 @@ namespace JOINJU
         {
 
         }
+        private async void ScoreBoard_Click(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new ScoreBoard());
+        }
     }
 }

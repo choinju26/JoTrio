@@ -14,9 +14,9 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Button Text="점수판" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="100" BackgroundColor="Aqua" 
-                Command="{Binding NavigateCommand}"
-                CommandParameter="{x:Type local:ScoreBoard}"/>
+        <Button Text="점수판" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="100" BackgroundColor="Aqua" Clicked="ScoreBoard_Click"/>
+        <!--Command="{Binding NavigateCommand}"
+                CommandParameter="{x:Type local:ScoreBoard}"-->
         <Button Text="기록" Grid.Row="1" Grid.Column="0"  FontSize="100" BackgroundColor="Aqua" 
                 Command="{Binding NavigateCommand}"
                 CommandParameter="{x:Type local:MatchRecordList}"/>
