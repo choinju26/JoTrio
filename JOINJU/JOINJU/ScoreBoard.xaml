@@ -234,6 +234,7 @@
 
             <Button x:Name="btnEndOfSet"
                     Text ="세트종료"
+                    Clicked="BtnEndOfSet_Clicked"
                     RelativeLayout.XConstraint=
                          "{ConstraintExpression Type=RelativeToParent,
                                                 Property=Width,

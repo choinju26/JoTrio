@@ -14,9 +14,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Button Text="축구" ContentLayout="Top, 10" Grid.Row="0" Grid.Column="0" FontSize="50" BackgroundColor="Aqua" 
-                Command="{Binding NavigateCommand}"
-                CommandParameter="{x:Type local:ScoreBoard}">
+        <Button Text="축구" ContentLayout="Top, 10" Grid.Row="0" Grid.Column="0" FontSize="50" BackgroundColor="Aqua" Clicked="ScoreBoard_Click">
             <Button.Image>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS, Android" Value="soccer.png" />
@@ -24,9 +22,7 @@
                 </OnPlatform>
             </Button.Image>
         </Button>
-        <Button Text="탁구" ContentLayout="Top, 10" Grid.Row="0" Grid.Column="1" FontSize="50" BackgroundColor="Aqua" 
-                Command="{Binding NavigateCommand}"
-                CommandParameter="{x:Type local:ScoreBoard}">
+        <Button Text="탁구" ContentLayout="Top, 10" Grid.Row="0" Grid.Column="1" FontSize="50" BackgroundColor="Aqua" Clicked="ScoreBoard_Click">
             <Button.Image>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS, Android" Value="MonkeyFace.png" />
@@ -34,9 +30,7 @@
                 </OnPlatform>
             </Button.Image>
         </Button>
-        <Button Text="배드민턴" ContentLayout="Top, 10"  Grid.Row="1" Grid.Column="0"  FontSize="50" BackgroundColor="Aqua" 
-                Command="{Binding NavigateCommand}"
-                CommandParameter="{x:Type local:ScoreBoard}">
+        <Button Text="배드민턴" ContentLayout="Top, 10"  Grid.Row="1" Grid.Column="0"  FontSize="50" BackgroundColor="Aqua" Clicked="ScoreBoard_Click">
             <Button.Image>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS, Android" Value="MonkeyFace.png" />
@@ -44,9 +38,7 @@
                 </OnPlatform>
             </Button.Image>
         </Button>
-        <Button Text="테니스" ContentLayout="Top, 10"  Grid.Row="1" Grid.Column="1"  FontSize="50" BackgroundColor="Aqua" 
-                Command="{Binding NavigateCommand}"
-                CommandParameter="{x:Type local:ScoreBoard}">
+        <Button Text="테니스" ContentLayout="Top, 10"  Grid.Row="1" Grid.Column="1"  FontSize="50" BackgroundColor="Aqua" Clicked="ScoreBoard_Click">
             <Button.Image>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS, Android" Value="MonkeyFace.png" />
