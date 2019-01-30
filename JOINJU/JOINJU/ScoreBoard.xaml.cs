@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
-using Common_ValueObject;
+using ValueObject_Class;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -101,21 +101,46 @@ namespace JOINJU
             }
             redScore = 0;
             blueScore = 0;
-
-            lbRedTeam.Text = string.Format("{0}", redScore);
-            lbBlueTeam.Text = string.Format("{0}", blueScore);
-            scoreVo.set(string.Format("redTeamScore{0}", setIndex + 1), redScore);
-            scoreVo.set(string.Format("blueTeamScore{0}", setIndex + 1), blueScore);
-            lbRedTeamSetScore.Text = string.Format("{0}", setRedScore);
-            lbBlueTeamSetScore.Text = string.Format("{0}", setBlueScore);
-
-            scoreVo.set("redTeamSetScore", setRedScore);
-            scoreVo.set("blueTeamSetScore", setBlueScore);
             setIndex++;
 
-            Debug.Print("Test -------------- \n" + scoreVo.ToString());
-            Debug.Print("Test -------------- \n" );
+            ScoreTestSet();
+
+            scoreVo.set(string.Format("redTeamScore{0}", setIndex), redScore);
+            scoreVo.set(string.Format("blueTeamScore{0}", setIndex), blueScore);
+            scoreVo.set("redTeamSetScore", setRedScore);
+            scoreVo.set("blueTeamSetScore", setBlueScore);
+            scoreVo.set("setIndex", setIndex);
+
+            
         }
-        //lbRedTeamSetScore, lbBlueTeamSetScore
+        private void ScoreTestSet()
+        {
+            lbRedTeam.Text = string.Format("{0}", redScore);
+            lbBlueTeam.Text = string.Format("{0}", blueScore);
+            lbRedTeamSetScore.Text = string.Format("{0}", setRedScore);
+            lbBlueTeamSetScore.Text = string.Format("{0}", setBlueScore);
+        }
+        private async void BtnEndOfGame_Clicked(object sender, EventArgs e)
+        {
+            //DB에 데이터 넣기
+            /*
+            ScoreDao scoreDao = new ScoreDao();
+            scoreDao.insertScore(scoreVo);
+            */
+            var answer = await DisplayAlert("게임종료", "게임을 종료하시겠습니까?", "아니오", "네");
+            //아니오 클릭 시 false 반환
+            if (!answer)
+            {
+                //DB에 데이터 넣기
+                ScoreDao scoreDao = new ScoreDao();
+                scoreDao.insertScore(scoreVo);
+            }
+            redScore = 0;
+            blueScore = 0;
+            setRedScore = 0;
+            setBlueScore = 0;
+            setIndex = 0;
+            ScoreTestSet();
+        }
     }
 }

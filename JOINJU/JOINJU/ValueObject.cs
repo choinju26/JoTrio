@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Collections;
 
-namespace Common_ValueObject
+namespace ValueObject_Class
 {
     class ValueObject
     {

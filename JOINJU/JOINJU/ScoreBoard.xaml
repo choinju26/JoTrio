@@ -196,7 +196,7 @@
                      RelativeLayout.YConstraint=
                          "{ConstraintExpression Type=RelativeToParent,
                                                 Property=Height,
-                                                Factor=0.5}"
+                                                Factor=0.3}"
                      RelativeLayout.WidthConstraint=
                          "{ConstraintExpression Type=RelativeToParent,
                                                 Property=Width,
@@ -221,7 +221,7 @@
                      RelativeLayout.YConstraint=
                          "{ConstraintExpression Type=RelativeToParent,
                                                 Property=Height,
-                                                Factor=0.5}"
+                                                Factor=0.3}"
                      RelativeLayout.WidthConstraint=
                          "{ConstraintExpression Type=RelativeToParent,
                                                 Property=Width,
@@ -235,6 +235,26 @@
             <Button x:Name="btnEndOfSet"
                     Text ="세트종료"
                     Clicked="BtnEndOfSet_Clicked"
+                    RelativeLayout.XConstraint=
+                         "{ConstraintExpression Type=RelativeToParent,
+                                                Property=Width,
+                                                Factor=0.42}"
+                     RelativeLayout.YConstraint=
+                         "{ConstraintExpression Type=RelativeToParent,
+                                                Property=Height,
+                                                Factor=0.5}"
+                     RelativeLayout.WidthConstraint=
+                         "{ConstraintExpression Type=RelativeToParent,
+                                                Property=Width,
+                                                Factor=0.16}"
+                     RelativeLayout.HeightConstraint=
+                         "{ConstraintExpression Type=RelativeToParent,
+                                                Property=Height,
+                                                Factor=0.12}"  />
+            
+            <Button x:Name="btnEndOfGame"
+                    Text ="게임종료"
+                    Clicked="BtnEndOfGame_Clicked"
                     RelativeLayout.XConstraint=
                          "{ConstraintExpression Type=RelativeToParent,
                                                 Property=Width,
