@@ -14,35 +14,31 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Button Text="축구" ContentLayout="Top, 10" Grid.Row="0" Grid.Column="0" FontSize="50" BackgroundColor="Aqua" Clicked="ScoreBoard_Click">
-            <Button.Image>
+        <Button Text="축구" ContentLayout="Top, 10" Grid.Row="0" Grid.Column="0" FontSize="50" BackgroundColor="White"  Clicked="ScoreBoard_Click">
+            <Button.Image WidthRequest="300">
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS, Android" Value="soccer.png" />
-                    <On Platform="UWP" Value="Assets/MonkeyFace.png" />
                 </OnPlatform>
             </Button.Image>
         </Button>
-        <Button Text="탁구" ContentLayout="Top, 10" Grid.Row="0" Grid.Column="1" FontSize="50" BackgroundColor="Aqua" Clicked="ScoreBoard_Click">
+        <Button Text="탁구" ContentLayout="Top, 10" Grid.Row="0" Grid.Column="1" FontSize="50" BackgroundColor="White" Clicked="ScoreBoard_Click">
             <Button.Image>
                 <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS, Android" Value="MonkeyFace.png" />
-                    <On Platform="UWP" Value="Assets/MonkeyFace.png" />
+                    <On Platform="iOS, Android" Value="pingpong.png" />
                 </OnPlatform>
             </Button.Image>
         </Button>
-        <Button Text="배드민턴" ContentLayout="Top, 10"  Grid.Row="1" Grid.Column="0"  FontSize="50" BackgroundColor="Aqua" Clicked="ScoreBoard_Click">
+        <Button Text="배드민턴" ContentLayout="Top, 10"  Grid.Row="1" Grid.Column="0"  FontSize="50" BackgroundColor="White" Clicked="ScoreBoard_Click">
             <Button.Image>
                 <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS, Android" Value="MonkeyFace.png" />
-                    <On Platform="UWP" Value="Assets/MonkeyFace.png" />
+                    <On Platform="iOS, Android" Value="badminton.png" />
                 </OnPlatform>
             </Button.Image>
         </Button>
-        <Button Text="테니스" ContentLayout="Top, 10"  Grid.Row="1" Grid.Column="1"  FontSize="50" BackgroundColor="Aqua" Clicked="ScoreBoard_Click">
+        <Button Text="테니스" ContentLayout="Top, 10"  Grid.Row="1" Grid.Column="1"  FontSize="50" BackgroundColor="White" Clicked="ScoreBoard_Click">
             <Button.Image>
                 <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS, Android" Value="MonkeyFace.png" />
-                    <On Platform="UWP" Value="Assets/MonkeyFace.png" />
+                    <On Platform="iOS, Android" Value="tennis.png" />
                 </OnPlatform>
             </Button.Image>
         </Button>
