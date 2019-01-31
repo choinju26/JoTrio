@@ -4,7 +4,6 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -20,29 +19,28 @@ namespace JOINJU
         {
             InitializeComponent();
 
-            BindingContext = new ListViewModel();
+            BindingContext = new ListViewModel();         
 
-          
-
-          //  MyListView.ItemsSource = Items;
         }
 
         private RecordListDetail popup;
 
-        async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
+ async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
         {
+
+            //   var index = (listview.ItemsSource as List<MyObject>).IndexOf(e.SelectedItem as listview);
+
+         
+           // await DisplayAlert("Question?", "??? "+ lvi, "Yes", "No");
+
+                                 
             if (e.Item == null)
                 return;
             popup = new RecordListDetail();
             await PopupNavigation.Instance.PushAsync(popup);
 
 
-            ((ListView)sender).SelectedItem = null;
-
-
-
-
-
+           ((ListView)sender).SelectedItem = null;
         }
     }
 }

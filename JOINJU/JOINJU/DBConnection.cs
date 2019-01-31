@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using Windows.Storage;
+using Xamarin.Forms;
 
 namespace JOINJU
 {
@@ -12,9 +14,26 @@ namespace JOINJU
         public bool ConnectionYn = true;
         public DBConnection()
         {
-            string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "ScoreDB");
+            var platform = Device.RuntimePlatform;
+
+            string dbPath = null;
+
+            switch (platform)
+            {
+                case Device.iOS:
+                    // iOS
+                    break;
+                case Device.Android:
+                    dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "ScoreDB");
+                    break;
+                case Device.UWP:
+                    dbPath = Path.Combine(ApplicationData.Current.LocalFolder.Path, "ScoreDB");
+                    break;
+            }
+
             var db = new SQLiteConnection(dbPath);
-            if(db != null)
+
+            if (db != null)
             {
                 this.db = db;
             }
@@ -47,5 +66,5 @@ namespace JOINJU
             public string delYn { get; set; }
         }
     }
-    
+
 }

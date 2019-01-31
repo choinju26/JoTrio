@@ -1,7 +1,13 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.IO;
 using System.Text;
+using Windows.Storage;
+using Xamarin.Forms.PlatformConfiguration;
+using static JOINJU.DBConnection;
 
 namespace JOINJU
 {
@@ -11,18 +17,43 @@ namespace JOINJU
 
         public ListViewModel()
         {
-            ScoreList = new ObservableCollection<Score> {
-                new Score(){ ScoreA = "5" , Date = "2019-01-22-18:00", Team = "A : B", ScoreB ="26"},
-                new Score(){ ScoreA = "50" , Date = "2019-01-22-18:00", Team = "A : B", ScoreB ="26"}
-            };
-        }
-    }
 
-    public class Score
-    {
-        public String ScoreA { get; set; }  //A Score
-        public String Date { get; set; }    //기록된 날짜
-        public String Team { get; set; }    // 팀명
-        public String ScoreB { get; set; }  //B Score
+            DBConnection DBConnect = new DBConnection();
+            SQLiteConnection list_db = null;
+
+            if (DBConnect != null)
+            {
+                list_db = DBConnect.db;                
+            }
+
+            list_db.CreateTable<ScoreTable>();
+
+            if (list_db.Table<ScoreTable>().Count() != 0)
+            {              
+                var table = list_db.Query<ScoreTable>("SELECT * FROM ScoreTable GROUP BY seq ");
+
+                ScoreList = new ObservableCollection<Score>();
+                foreach (var list in table)
+                {
+                    ScoreList.Add(new Score()
+                    {
+                        redTeamSetScore = list.redTeamSetScore,
+                        insDate = list.insDate,
+                        // Team = order.Team,
+                        blueTeamSetScore = list.blueTeamSetScore
+                    });
+                }
+
+            }
+        }
+        
+        [Table("Score")]
+        public class Score
+        {
+            public int redTeamSetScore { get; set; }  //Red Team SetScore
+            public DateTime insDate { get; set; }    //Date
+           // public String Team { get; set; }    // 팀명
+            public int blueTeamSetScore { get; set; }  //Blue Team SetScore
+        }
     }
 }
