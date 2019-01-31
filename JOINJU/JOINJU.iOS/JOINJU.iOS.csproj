@@ -163,4 +163,19 @@
       <Name>JOINJU</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\welcomepage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pingpong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tennis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\badminton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\soccer.png" />
+  </ItemGroup>
 </Project>

@@ -11,16 +11,7 @@ namespace JOINJU
         {
             InitializeComponent();
 
-            var tappedPage = new TabbedPage();
-            tappedPage.Children.Add(new MainPage());
-            tappedPage.Children.Add(new MatchRecordList());
-            tappedPage.Children.Add(new Setting());
-
-            MainPage = new TabbedPage();
-            MainPage = tappedPage;
-
-            //MainPage = new NavigationPage(new MainPage());
-
+            MainPage = new NavigationPage(new SplashPage());
 
         }
 
